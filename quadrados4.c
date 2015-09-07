@@ -22,6 +22,8 @@ int main(int argc, char** argv){
 void display(void){
   int i;
   glClear(GL_COLOR_BUFFER_BIT);
+  
+  //Desenha o Primeiro quadrado
   glColor3f (0.0, 0.0, 0.0);
   glBegin(GL_POLYGON);
   glVertex2f(0.0,0.0);
@@ -30,6 +32,7 @@ void display(void){
   glVertex2f(0.0,2.0);
   glEnd();
 
+  //2 Quadrado
   glColor3f (1.0, 0.0, 0.0);
   glBegin(GL_POLYGON);
   glVertex2f(2.0,2.0);
@@ -38,6 +41,7 @@ void display(void){
   glVertex2f(2.0,4.0);
   glEnd();
 
+  //3 quadrado
   glColor3f (0.0, 1.0, 0.0);
   glBegin(GL_POLYGON);
   glVertex2f(4.0,4.0);
@@ -46,6 +50,7 @@ void display(void){
   glVertex2f(4.0,6.0);
   glEnd();
 
+  //4 quadrado
   glColor3f (0.0, 0.0, 1.0);
   glBegin(GL_POLYGON);
   glVertex2f(6.0,6.0);

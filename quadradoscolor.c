@@ -14,6 +14,7 @@ void convertToRgb(float);
 
 
 float r,g,b;
+//cada vertice do quadrado começara com um angulo determinado que serão incrementados {0 , 90 , 180 , 270}
 float h[4]={0.0,90.0,180.0,270.0}, I=0.8,S=1.0;
 
 int main(int argc, char** argv){
@@ -34,6 +35,7 @@ int main(int argc, char** argv){
 
 void timer(int value){
 	int i;	
+	//incrementa o grau de cada vertice em 1
 	for(i=0;i<4;i++){
 		h[i]=h[i]+1;
 		if(h[i] >= 360)
@@ -46,34 +48,30 @@ void timer(int value){
 void display(void){
   int i;
   glClear(GL_COLOR_BUFFER_BIT);
-  convertToRgb(h[0]);
+  convertToRgb(h[0]);//transforma o valor do primeiro vertice em rgb associado a um valor HSI
+  
   glColor3f (r, g, b);
   glBegin(GL_POLYGON);
   glVertex2f(0.25,0.25);
-	printf("h[0] = %f\n",h[0]);
-	printf("%f  %f  %f \n",r,g,b);
-
   convertToRgb(h[1]);
+
   glColor3f (r, g, b);
   glVertex2f(0.75,0.25);
-	printf("h[1] = %f\n",h[1]);
-	printf("%f  %f  %f \n",r,g,b);
-
   convertToRgb(h[2]);
+  
   glColor3f (r, g, b);
   glVertex2f(0.75,0.75);
-	printf("h[2] = %f\n",h[2]);
-	printf("%f  %f  %f \n",r,g,b);
-
   convertToRgb(h[3]);
+  
   glColor3f (r, g, b);
   glVertex2f(0.25,0.75);
-	printf("h[3] = %f\n",h[3]);
-	printf("%f  %f  %f \n",r,g,b);
+  
   glEnd();
   glFlush();
 }
 
+
+//Função convertecer HSI - RGB do professor
 void convertToRgb(float h){	
 	if(h <120){
 		b = I * (1 - S)/3;
