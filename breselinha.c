@@ -33,6 +33,7 @@ void display(void){
   
   
   int x,y,x1=40,y1=200,x2=200,y2=10;
+  //s1 e s2 guardaram o sinal de x2-x1 e y2-y1
   int delta_x, delta_y, s1 , s2;
   int aux, troca; 
   int e;

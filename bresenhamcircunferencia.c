@@ -6,6 +6,7 @@ void display(void);
 void keyboard(unsigned char key, int x, int y);
 void print(int x,int y);
 
+//coordenadas do centro da circunferencias
 int cx = 128, cy = 128;
 
 int main(int argc, char** argv){
@@ -60,6 +61,7 @@ void keyboard(unsigned char key, int x, int y){
 }
 
 void print(int x,int y){
+  //quando um pomto e escolhido para ser desenhado no pegamos os seus representantes no outro octantes e também desenhamos
   glBegin(GL_POINTS);
   glVertex2i(x+cx,y+cy);
   glEnd();

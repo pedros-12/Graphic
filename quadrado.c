@@ -5,6 +5,7 @@ void init(void);
 void display(void);
 void keyboard(unsigned char key, int x, int y);
 
+//auxiliar para decidir qual cor sera mostrada, se aux =0 vermelho, se aux = 1 azul
 int aux =0;
 
 int main(int argc, char** argv){
@@ -42,6 +43,7 @@ void display(void){
   glFlush();
 }
 
+//mudifica o valor de aux caso teclas especificas sejam precionadas
 void keyboard(unsigned char key, int x, int y){
   switch (key) {
   case 27:
